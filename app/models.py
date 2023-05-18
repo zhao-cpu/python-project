@@ -16,6 +16,10 @@ class Department(models.Model):
     """ 部门 """
     title = models.CharField(verbose_name='标题', max_length=32)
 
+    # 解决关联表 表单展示
+    def __str__(self):
+        return self.title
+
 
 class UserInfo(models.Model):
     """ 员工 """

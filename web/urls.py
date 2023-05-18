@@ -28,5 +28,6 @@ urlpatterns = [
 
     # 用户
     path('user/list', views.user_list),
+    path('user/add', views.user_add),
 
 ]
