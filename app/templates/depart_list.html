@@ -1,0 +1,36 @@
+{% extends 'layouts.html' %}
+{% block content %}
+
+<ul class="nav">
+	<li class="nav-item">
+		<a class="nav-link active" href="#">部门管理</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="/user/list">人员管理</a>
+	</li>
+</ul>
+
+<a href="/depart/add">新增部门</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">id</th>
+			<th scope="col">部门名称</th>
+			<th scope="col">操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		{% for item in depart_list %}
+		<tr>
+			<th scope="row">{{ item.id }}</th>
+			<td>{{ item.title }}</td>
+			<td>
+				<a>编辑</a>
+				<a href='/depart/{{ item.id }}/delete'>删除</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}
